@@ -69,6 +69,7 @@ function LineChart() {
             // pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
             pointHoverBackgroundColor: '#5B5FC7',
             pointHoverBorderColor: '#fff',
+            
           },
         ],
       };

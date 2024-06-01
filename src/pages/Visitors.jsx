@@ -7,6 +7,8 @@ import VisitorsTable from '../components/visitors/VisitorsTable'
 import AddVisitorForm from '../components/visitors/AddVisitorForm'
 
 
+
+
 function Visitors() {
   return (
     <div>

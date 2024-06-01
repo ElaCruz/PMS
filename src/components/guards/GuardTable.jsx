@@ -99,8 +99,8 @@ function GuardTable() {
               </td>
               <td>{guard.age}</td>
               {/* <td>{prr.cell}</td> */}
-              <td>{guard.gender}</td>
-              <td>{guard.cell}</td>
+              <td>{guard.gender_name}</td>
+              <td>{guard.cell_name}</td>
               <td className="table-icons d-flex gap-3 w-100 justify-content-center">
                 <img
                   src="/src/assets/scan.svg"

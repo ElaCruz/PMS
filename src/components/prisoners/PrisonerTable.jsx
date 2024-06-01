@@ -149,8 +149,8 @@ function PrisonerTable() {
                 {prisoner.first_name} {prisoner.last_name}
               </td>
               <td>{prisoner.age}</td>
-              <td>{prisoner.cell}</td>
-              <td>{prisoner.gender}</td>
+              <td>{prisoner.cell_name}</td>
+              <td>{prisoner.gender_name}</td>
               <td>{prisoner.date_arrested}</td>
               <td className="table-icons d-flex gap-3 w-100 justify-content-center">
                 <img

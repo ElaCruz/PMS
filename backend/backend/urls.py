@@ -42,6 +42,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('cors/', include('corsheaders.urls')),
     path('api/', include(router.urls)),
-    path('api/cells/<int:cell_id>/', views.Cell, name='Cell'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

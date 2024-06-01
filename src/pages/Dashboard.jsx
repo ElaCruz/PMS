@@ -6,7 +6,7 @@ import LineChart from '../components/charts/LineChart'
 import GenderChart from '../components/charts/GenderChart'
 import sidebar_logo from '../assets/sidebar_logo.svg'
 
-
+import CellPopulation from '../components/charts/CellPopulation'
 // Imports for icons and graphs and static graphs
 import group_visitor_icon from '../assets/group_visitor_icon.svg'
 import group_prisoner_icon from '../assets/group_prisoner_icon.svg'
@@ -141,11 +141,13 @@ function Dashboard() {
                 <div className="bg-white text-start p-3 fs-5 d-flex flex-column "  style={{width:'380px', borderRadius:'20px'}}>
                   Cell Population
                   {/* Cell population graph here*/}
+                  <CellPopulation/>
                 </div>
 
                 <div className=" bg-white text-start p-3 fs-5 d-flex flex-column "  style={{width:'480px', borderRadius:'20px'}}>
                   Recently Added Prisoners
                   {/* Recently added prisoners her*/}
+                  
                 </div>
 
               </div>

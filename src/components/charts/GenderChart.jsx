@@ -14,6 +14,8 @@ function GenderChart() {
         label: 'Number of Prisoners',
         data: [maleCount, femaleCount],
         backgroundColor: ['#FF5252', '#FBC02D'],
+        borderWidth: 1,
+        borderRadius: 5,
       },
     ],
   };

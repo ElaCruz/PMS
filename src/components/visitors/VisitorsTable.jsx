@@ -87,8 +87,8 @@ function VisitorsTable() {
               </td>
               <td>{visitor.relation}</td>
               {/* <td>{prr.cell}</td> */}
-              <td>{visitor.prisoner_visited}</td>
-              <td>{visitor.gender}</td>
+              <td>{visitor.prisoner_visited_name}</td>
+              <td>{visitor.gender_name}</td>
               <td>{visitor.date_visited}</td>
               <td className="table-icons d-flex gap-3 w-100 justify-content-center">
                 <img
