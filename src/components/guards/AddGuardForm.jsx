@@ -114,7 +114,7 @@ function AddGuardForm() {
     <div>
       <div className="d-flex justify-content-between">
         {/* Search Guard */}
-        <SearchBar />
+        {/* <SearchBar /> */}
 
         {/* Button trigger  add new guard  modal*/}
         <button

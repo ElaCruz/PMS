@@ -182,7 +182,7 @@ function AddPrisonerForm() {
     <div>
       <div className="d-flex justify-content-between">
         {/* Search prisoner */}
-        <SearchBar />
+        {/* <SearchBar /> */}
 
         {/* Button trigger  add new prisoner  modal*/}
         <button

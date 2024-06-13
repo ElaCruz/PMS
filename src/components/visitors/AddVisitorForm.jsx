@@ -1,6 +1,9 @@
 import React, { useState , useEffect} from 'react'
 import SearchBar from '../SearchBar'
 import axios from 'axios';
+// import { exportToCSV, exportToPDF } from '../utils'
+
+
 
 function AddVisitorForm() {
 
@@ -8,7 +11,13 @@ function AddVisitorForm() {
    const [genders, setGenders] = useState([]);
     const [cells, setCells] = useState([]);
     const [prisoners, setPrisoners] = useState([]);
-
+  
+  //  const handleExportCSV = () => {
+  //       exportToCSV(sampleData, 'sample_data');
+  //   };
+    
+  //  const handleExportPDF = () => {
+  //       exportToPDF(sampleData, 'sample_data');
     useEffect(() => {
         // Fetch prisoners from Django backend
         axios
@@ -112,7 +121,7 @@ function AddVisitorForm() {
     <div>
       <div className="d-flex justify-content-between">
         {/* Search Guard */}
-        <SearchBar />
+        {/* <SearchBar /> */}
 
         {/* Button trigger  add new guard  modal*/}
         <button
