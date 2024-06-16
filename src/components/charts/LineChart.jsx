@@ -36,72 +36,45 @@
 
 // export default LineChart;
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 function LineChart() {
   const chartContainer = useRef(null);
   const chartInstance = useRef(null);
 
+  const [visitorData, setVisitorData] = useState([]);
+
   useEffect(() => {
-    if (chartContainer && chartContainer.current) {
-      if (chartInstance.current) {
-        // Destroy the previous chart instance if it exists
-        chartInstance.current.destroy();
-      }
+    fetch("http://127.0.0.1:8000/api/visitors/")
+      .then((response) => response.json())
+      .then((data) => {
+        // Process the visitor data to extract the date/month information
+        const visitorDates = data.map((visitor) => {
+          const date = new Date(visitor.date);
+          const month = date.toLocaleString("default", { month: "long" });
 
-      const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-        datasets: [
-          {
-            label: 'Visitors',
-            // data: [500, 1000, 750, 1250, 800, 1500],
-            data: [5, 10, 7.5, 12.5, 8, 15],
-            backgroundColor: '#5B5FC7',
-            // borderColor: 'rgba(75, 192, 192, 1)',
-            borderColor: '#5B5FC7',
-            borderWidth: 2,
-            pointRadius: 4,
-            // pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-            pointBackgroundColor: '#5B5FC7',
-            pointBorderColor: '#fff',
-            pointHoverRadius: 6,
-            // pointHoverBackgroundColor: 'rgba(75, 192, 192, 1)',
-            pointHoverBackgroundColor: '#5B5FC7',
-            pointHoverBorderColor: '#fff',
-            
-          },
-        ],
-      };
+          return month;
+        });
 
-      const chartConfig = {
-        type: 'line',
-        data: data,
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              beginAtZero: true,
-              max: 20,
-            },
-          },
-        },
-      };
+        // Count the number of visits for each date/month
+        const visitCounts = visitorDates.reduce((counts, month) => {
+          counts[month] = (counts[month] || 0) + 1;
+          return counts;
+        }, {});
 
-      // Create a new chart instance
-      chartInstance.current = new Chart(chartContainer.current, chartConfig);
-    }
-
-    // Clean up the chart instance on component unmount
-    return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
-    };
+        const visitData = Object.values(visitCounts);
+        setVisitorData(visitData);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }, []);
+  
 
-  return <canvas ref={chartContainer}></canvas>;
+
+
+
 }
 
 export default LineChart;

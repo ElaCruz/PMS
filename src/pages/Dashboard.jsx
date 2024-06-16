@@ -121,11 +121,11 @@ function Dashboard() {
               <div className="dashboard-graphs-container  d-flex gap-3 ">
                 {/* Visitor's graph */}
                 <div className="bg-white text-start fs-5 justify-content-start p-3 d-flex flex-column h-100" style={{width:'480px',borderRadius:'20px'}}>
-                  Visitors Statistics
+                  Cell Population
                   {/* <img src={visit_static_graph} alt="" className="img-fluid mt-5" /> */}
                   {/* <LineChart /> */}
                   <div style={{ width: '450px', height: '400px', margin: '9px auto' }}>
-                    <LineChart />
+                    <CellPopulation />
                   </div>
                 </div>
 
@@ -139,9 +139,9 @@ function Dashboard() {
               {/* Last Section */}
               <div className="dashboard-last-section d-flex gap-3">
                 <div className="bg-white text-start p-3 fs-5 d-flex flex-column "  style={{width:'380px', borderRadius:'20px'}}>
-                  Cell Population
+                  Visitor's Statistics
                   {/* Cell population graph here*/}
-                  <CellPopulation/>
+                  <LineChart />
                 </div>
 
                 <div className=" bg-white text-start p-3 fs-5 d-flex flex-column "  style={{width:'480px', borderRadius:'20px'}}>
