@@ -1,7 +1,6 @@
+
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }] ,
   "version": 2,
-  "builds": [{ "src": "vercel-django-server", "use": "@now/python" }],
   "routes": [
     { "handle": "filesystem" },
     {
