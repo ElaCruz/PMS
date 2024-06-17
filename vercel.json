@@ -1,5 +1,5 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-"version": 2,
+{
+  "version": 2,
   "builds": [{ "src": "vercel-django-server", "use": "@now/python" }],
   "routes": [
     { "handle": "filesystem" },
@@ -9,7 +9,7 @@
     }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "prison.settings",
+    "DJANGO_SETTINGS_MODULE": "backend.settings",
     "VERCEL": "1"
   },
   "functions": {
