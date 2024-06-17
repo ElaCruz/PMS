@@ -11,11 +11,5 @@
   "env": {
     "DJANGO_SETTINGS_MODULE": "backend.settings",
     "VERCEL": "1"
-  },
-  "functions": {
-    "api/:slug": {
-      "runtime": "@now/python",
-      "handler": "bootstrap.handler"
-    }
   }
 }
