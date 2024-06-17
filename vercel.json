@@ -1,1 +1,21 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+{ "rewrites": [{ "source": "/(.*)", "destination": "/" }],
+"version": 2,
+  "builds": [{ "src": "vercel-django-server", "use": "@now/python" }],
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/(.*)",
+      "dest": "vercel-django-server"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "prison.settings",
+    "VERCEL": "1"
+  },
+  "functions": {
+    "api/:slug": {
+      "runtime": "@now/python",
+      "handler": "bootstrap.handler"
+    }
+  }
+}
