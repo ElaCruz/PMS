@@ -83,7 +83,6 @@ class Guard(models.Model):
     cell = models.ForeignKey(Cell, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to= filepath, null=True)
     age = models.IntegerField()
-    # status = models.ForeignKey(Status, on_delete=models.CASCADE)
     shift_start_time = models.TimeField()
     shift_end_time = models.TimeField()
 

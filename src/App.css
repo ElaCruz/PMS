@@ -495,9 +495,28 @@ td .prisoner-photo{
 }
 
 
+/********* Recently added Prisoners ********/
+.recent-prisoners img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.recent-prisoners p {
+  font-family: 'Montserrat';
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
 /* **************Prisoner Details Modal Styles *****************/
 #prisonerDetailsModal .modal-dialog{
   max-width: 650px !important;
+}
+
+.modal {
+  font-family: "Montserrat" !important;
 }
 
 .prisonerDetailsBody, .guardDetailsContent{
@@ -520,6 +539,27 @@ td .prisoner-photo{
 }
 
 
+/* ********* Edit Prisoner Modal Styles ********* */
+#editPrisonerModal .modal-dialog {
+  max-width: 800px;
+}
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-field input,
+select {
+  width: 210px !important;
+  height: 50px !important;
+  border-radius: 6px !important;
+  color: #888;
+  /* outline: 1px solid #5B5FC7 !important; */
+  border: .5px solid #5a5a5a;
+}
+
+
 /************* Guard Details Modals Styles ***************/
 .guardDetailsContent img{
   height: 200px;
@@ -527,4 +567,15 @@ td .prisoner-photo{
   object-fit: cover;
   object-position: center;
   border-radius: 15px;
+}
+
+
+
+/* *********Other stuff **********/
+.stubborn-btn{
+  margin-left: 45rem !important;
+}
+
+.searchbar-start{
+  margin-top: -3rem !important;
 }

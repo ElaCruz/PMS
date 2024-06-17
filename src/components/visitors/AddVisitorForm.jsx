@@ -126,7 +126,7 @@ function AddVisitorForm() {
         {/* Button trigger  add new guard  modal*/}
         <button
           type="button"
-          class="add-any-btn text-white fw-semibold"
+          class="add-any-btn text-white fw-semibold stubborn-btn"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
         >

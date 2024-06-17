@@ -187,9 +187,9 @@ function AddPrisonerForm() {
         {/* Button trigger  add new prisoner  modal*/}
         <button
           type="button"
-          className="btn fw-semibold btn-primary add-any-btn"
+          className="btn fw-semibold btn-primary add-any-btn d-flex justify-content-end me-auto stubborn-btn"
           data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
+          data-bs-target="#addPrisonerForm"
         >
           + Add New Prisoner
         </button>
@@ -199,7 +199,7 @@ function AddPrisonerForm() {
       <div
         className="modal fade "
         style={{ color: "#5a5a5a", fontFamily: "Montserrat" }}
-        id="staticBackdrop"
+        id="addPrisonerForm"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
         tabindex="-1"

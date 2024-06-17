@@ -75,35 +75,35 @@ function Prisoners() {
             <div className="main-container">
               {/* Prisoner Page Summary Section */}
               <div className=" prisoners-summary d-flex gap-4 justify-content-start align-items-center">
-                <div className="d-flex gap-5 justify-content-center">
+                {/* <div className="d-flex gap-5 justify-content-center"> */}
                   {/* Total Prisoners */}
-                  <div className="prisoners-div total py-2 px-4 d-flex flex-column ">
-                    <div className="icon-text-div d-flex gap-2 align-items-center">
+                  {/* <div className="prisoners-div total py-2 px-4 d-flex flex-column "> */}
+                    {/* <div className="icon-text-div d-flex gap-2 align-items-center">
                       <img
                         src={group_prisoner_icon}
                         alt="prisoner_group_icon"
                       />
                       <b>Total Prisoners</b>
-                    </div>
+                    </div> */}
 
                     {/* Total Prisoners Number */}
-                    <h4 className="text-start mt-2 fw-semibold">0{ prisonerCount}</h4>
-                  </div>
+                    {/* <h4 className="text-start mt-2 fw-semibold">0{ prisonerCount}</h4> */}
+                  {/* </div> */}
 
                   {/* Total Court Cases */}
-                  <div className="prisoners-div court-cases py-2 px-4 d-flex flex-column">
-                    <div className="icon-text-div d-flex gap-2 align-items-center">
+                  {/* <div className="prisoners-div court-cases py-2 px-4 d-flex flex-column"> */}
+                    {/* <div className="icon-text-div d-flex gap-2 align-items-center">
                       <img
                         src={court_cases_icon} className='court_group_icon'
                         alt="cases_group_icon"
                       />
                       <b>Total Court Cases</b>
-                    </div>
+                    </div> */}
 
                     {/* Total Court Cases Number */}
-                    <h4 className="text-start mt-2 fw-semibold">0{ prisonerCount}</h4>
-                  </div>
-                </div>
+                    {/* <h4 className="text-start mt-2 fw-semibold">0{ prisonerCount}</h4> */}
+                  {/* </div>
+                </div> */}
                 {/* End of Prisoner and COurt Case Divs */}
 
                 {/* Graph Statistics Area Just Incase I decide to add*/}

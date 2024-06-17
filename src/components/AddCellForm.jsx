@@ -33,8 +33,8 @@ function AddCellForm() {
         
         {/* Add new cell modal aan searchbar*/}
        <div className="d-flex justify-content-between align-items-center">
-            <SearchBar />
-            <button type="button" class="add-any-btn text-white fw-semibold " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+            {/* <SearchBar /> */}
+            <button type="button" class="add-any-btn text-white fw-semibold stubborn-btn " data-bs-toggle="modal" data-bs-target="#exampleModal" >
                + Add Prison Cell
            </button>
        </div>

@@ -7,6 +7,8 @@ import CellSideBar from '../components/CellSideBar'
 import AddCellForm from '../components/AddCellForm'
 import cell_group_icon from "../assets/group_cell_icon.svg";
 import cell_highest from "../assets/cell_highest.svg";
+import CellTable from '../components/CellTable';
+import { exportToCSV, exportToPDF } from '../utils';
 
 
 
@@ -95,6 +97,16 @@ function Cells() {
               <div className="searchbar-btn-div d-flex  ">
                 <AddCellForm />
               </div>
+
+               {/* Cell Table Here */}
+              <div
+                className="position-absolute mt-5"
+                style={{ marginRight: "194rem", width: "80vw" }}
+              >
+                <CellTable />
+
+              </div>  
+
             </div>
           </div>
         </div>
