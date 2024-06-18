@@ -55,13 +55,13 @@ function Login() {
 
 
     //I'm Checkin if email and password match the predefined values
-    if (email === 'example@gmail.com' && password === '1234') {
+    if (email === 'example@gmail.com' && password === '11216@') {
       // Login successful
-      toast.success('Login successful!', {
+      toast.success('Proceed To Next Login', {
         autoClose: 3000, 
       });
       setTimeout(() => {
-        window.location.href = '/dashboard'; 
+        window.location.href = '/facial'; 
       }, 2000); 
 
     } else {

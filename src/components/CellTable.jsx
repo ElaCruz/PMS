@@ -5,14 +5,14 @@ import { exportToCSV, exportToPDF } from "../utils/index";
 
 function CellTable() {
   const [cells, setCells] = useState([]);
-  const [currentCell, setCurrentCell] = useState(null);
+  // const [currentCell, setCurrentCell] = useState(null);
   const [prisoners, setPrisoners] = useState([]);
   const [guards, setGuards] = useState([]);
   const [filteredCells, setFilteredCells] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [editingCell, setEditingCell] = useState("");
-  const [deletingCell, setDeletingCell] = useState(null);
-  const [cellDetails, setCellDetails] = useState(null);
+  const [deletingCell, setDeletingCell] = useState("");
+  const [cellDetails, setCellDetails] = useState("");
 
   // Fetch Cells
   useEffect(() => {
@@ -89,11 +89,12 @@ function CellTable() {
   // Delete Cell
   const deleteCell = async (cellId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/cells/${deleteCell.id}`);
+      await axios.delete(`http://localhost:8000/api/cells/${deleteCell.id}/`);
       const updatedCells = cells.filter((cell) => cell.id !== cellId);
       setCells(updatedCells);
       setFilteredCells(updatedCells);
       setDeletingCell(null); 
+      alert("Cell deleted Successfully")
     } catch (error) {
       console.error("Error deleting cell", error);
       // Show error message or perform error handling
@@ -104,7 +105,7 @@ function CellTable() {
   const editCell = async (updatedCell) => {
     try {
       await axios.put(
-        `http://localhost:8000/api/cells/${updatedCell.id}`,
+        `http://localhost:8000/api/cells/${updatedCell.id}/`,
         updatedCell
       );
       const updatedCells = cells.map((cell) => {
@@ -115,7 +116,8 @@ function CellTable() {
       });
       setCells(updatedCells);
       setFilteredCells(updatedCells);
-      setEditingCell(null);
+      setEditingCell("");
+      alert("Cell updated Successfully")
     } catch (error) {
       console.error("Error editing cell", error);
     }
@@ -183,14 +185,14 @@ function CellTable() {
                 <td>{getAssignedGuardsInCell(cell.id)}</td>
                 <td className="table-icons d-flex gap-3 w-100 justify-content-center">
                   <img
-                    src="/src/assets/scan.svg"
+                    src="../../src/assets/scan.svg"
                     data-bs-target="#cellDetailsModal"
                     data-bs-toggle="modal"
                     onClick={() => handleCellDetails(cell)}
                   />
 
                   <img
-                    src="/src/assets/edit-2.svg"
+                    src="../../src/assets/edit-2.svg"
                     onClick={() => handleEditCell(cell)}
                     data-bs-target="#editCellModal"
                     data-bs-toggle="modal"
@@ -198,7 +200,7 @@ function CellTable() {
                   <img
                     data-bs-target="#deleteCellModal"
                     data-bs-toggle="modal"
-                    src="/src/assets/trash.svg"
+                    src="../../src/assets/trash.svg"
                     onClick={() => handleDeleteCell(cell)}
                   />
                 </td>
@@ -246,6 +248,7 @@ function CellTable() {
                 <button
                   className="btn btn-primary"
                   onClick={() => editCell(editingCell)}
+                  data-bs-dismiss="modal"
                 >
                   Save
                 </button>
@@ -284,7 +287,8 @@ function CellTable() {
                   className="my-4 img-fluid"
                 />
                 <p className="text-center fs-5">
-                  Are you sure you want to delete this cell?
+                  Are you sure you want to delete{" "}
+                  <span className="text-danger fs-5">{deletingCell.name}</span>?
                 </p>
               </div>
               <div class="modal-footer">
@@ -299,7 +303,7 @@ function CellTable() {
                   type="button"
                   data-bs-dismiss="modal"
                   class="btn btn-danger"
-                  onClick={handleDeleteCell}
+                  onClick={() => deleteCell(deletingCell.id)}
                 >
                   Delete
                 </button>

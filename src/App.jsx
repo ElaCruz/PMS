@@ -2,29 +2,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import {Visitors, HomeLayout,Cells,Login,Dashboard,Settings,Prisoners,PrisonGuards} from './pages'
+import FacialRecognitionAuthentication from './pages/FacialRecognitionAuthentication';
 
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Login />,
 
-
-    
       // children: [
       //   {
       //     index: true,
       //     element: <Dashboard />,
-       
+
       //   },
       //   {
       //     path: 'cells',
       //     element: <Cells />,
-         
+
       //   },
       //   {
       //     path: 'visitors/',
       //     element: <Visitors />,
-       
+
       //   },
       //   {
       //     path: 'setting',
@@ -39,31 +38,34 @@ import {Visitors, HomeLayout,Cells,Login,Dashboard,Settings,Prisoners,PrisonGuar
       // ],
     },
     {
-      path: '/dashboard',
-      element: <Dashboard/>
-
+      path: "/dashboard",
+      element: <Dashboard />,
     },
     {
-      path: '/prisoners',
+      path: "/prisoners",
       element: <Prisoners />,
     },
     {
-      path: '/cells',
+      path: "/cells",
       element: <Cells />,
     },
     {
-      path: '/visitors',
+      path: "/visitors",
       element: <Visitors />,
     },
     {
-      path: '/setting',
+      path: "/setting",
       element: <Settings />,
     },
     {
-      path: '/guards',
-      element: <PrisonGuards/>,
+      path: "/guards",
+      element: <PrisonGuards />,
     },
-
+    {
+      path: "/facial",
+      element: < FacialRecognitionAuthentication/>,
+    }
+    
   ]);
   const App = () => {
     return <RouterProvider router={router}></RouterProvider>

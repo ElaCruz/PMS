@@ -579,3 +579,16 @@ select {
 .searchbar-start{
   margin-top: -3rem !important;
 }
+
+
+/* **********Facial Recognition **********/
+.PIN-input{
+  height: 40px !important;
+  width: 300px !important;
+  font-family: "Montserrat";
+  border-radius: 10px !important;
+  padding-left: 10px !important;
+  border: 1 px solid #001F55 !important;
+  color: #5B5FC7 !important;
+}
+
